@@ -7,25 +7,25 @@ The DataVault Application allows you to upload, manage, and retrieve files. It u
 
 ## Features  
 
--Upload File: Upload files with valid file types (JPEG, PNG, PDF).  
--View All Files: Retrieve a list of all uploaded files.  
--Delete File: Delete a specific file based on its ID.  
--Update Metadata: Update the metadata of a specific file (e.g., file name).  
+- Upload File: Upload files with valid file types (JPEG, PNG, PDF).  
+- View All Files: Retrieve a list of all uploaded files.  
+- Delete File: Delete a specific file based on its ID.  
+- Update Metadata: Update the metadata of a specific file (e.g., file name).  
 
 
 ## Tech Stack  
 
--Spring Boot: Backend framework.  
--JPA (Java Persistence API): For database interaction.  
--MySQL: Database for storing file metadata.  
--Docker: Containerization of the application and database.  
--Maven: Build automation tool.
+- Spring Boot: Backend framework.  
+- JPA (Java Persistence API): For database interaction.  
+- MySQL: Database for storing file metadata.  
+- Docker: Containerization of the application and database.  
+- Maven: Build automation tool.
 
 
 ## Prerequisites  
 
--Docker: Ensure Docker is installed to run the application in containers.  
--MySQL: MySQL service is required for metadata storage.  
+- Docker: Ensure Docker is installed to run the application in containers.  
+- MySQL: MySQL service is required for metadata storage.  
 
 
 ## Setup Instructions  
@@ -119,26 +119,26 @@ The application will be accessible on http://localhost:8080.
 
 ### Step 6: API Endpoints    
 
-Upload File    
+#### Upload File    
 URL: ``/api/files/upload``
 Method: `POST` 
 Body: Multipart file (JPEG, PNG, or PDF)  
 Response: The uploaded file's metadata, including file name, path, and upload timestamp.  
 
 
-List All Files      
+#### List All Files      
 URL: ``/api/files``  
 Method: `GET` 
 Response: A list of all files, including their metadata.      
 
 
-Delete File    
+#### Delete File    
 URL: ``/api/files/{id}``  
 Method: `DELETE` 
 Response: A success message if the file is deleted successfully, or an error message if not.  
 
 
-Update File Metadata  
+#### Update File Metadata  
 URL: ``/api/files/{id}``  
 Method: `PUT`
 Body: Updated metadata (e.g., file name)  
@@ -163,5 +163,5 @@ The application will start and be accessible at `http://localhost:8080`.
 
 ## Troubleshooting  
 
--File Not Found: Ensure that the file exists in the specified path and that you are using a valid file type.
--Database Connection: Verify that MySQL is running and accessible with the correct credentials.
+- File Not Found: Ensure that the file exists in the specified path and that you are using a valid file type.
+- Database Connection: Verify that MySQL is running and accessible with the correct credentials.
