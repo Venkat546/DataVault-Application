@@ -36,6 +36,8 @@ git clone https://github.com/Venkat546/DataVault-Application.git
 cd datavault-application
 ```
 
+
+
 ### Step 2: Configure MySQL  
 
 In the application.properties file:  
@@ -49,13 +51,17 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 Make sure MySQL is running and accessible.
 ```
 
+
+
 ### Step 3: Set File Upload Directory  
 The application allows file uploads. The directory for storing uploaded files can be configured as:  
 
 ```
 file.upload-dir=/app/upload
 ```
-This directory will be used by the application to store files uploaded through the API.  
+This directory will be used by the application to store files uploaded through the API.    
+
+
 
 ### Step 4: Docker Setup  
 To run the application with Docker, ensure the docker-compose.yml file is correctly configured. Here's an overview:  
@@ -93,6 +99,8 @@ volumes:
   mysql-data:
 ```
 
+
+
 ### Step 5: Build and Run the Application  
 To build and run the application:  
 
@@ -106,41 +114,50 @@ Start the containers:
 docker-compose up
 ```
 The application will be accessible on http://localhost:8080.  
-Step 6: API Endpoints  
-Upload File  
 
+
+
+### Step 6: API Endpoints    
+
+Upload File    
 URL: ``/api/files/upload``
 Method: `POST` 
 Body: Multipart file (JPEG, PNG, or PDF)  
 Response: The uploaded file's metadata, including file name, path, and upload timestamp.  
-List All Files  
 
+
+List All Files      
 URL: ``/api/files``  
 Method: `GET` 
-Response: A list of all files, including their metadata.  
-Delete File  
+Response: A list of all files, including their metadata.      
 
+
+Delete File    
 URL: ``/api/files/{id}``  
 Method: `DELETE` 
-Response: A success message if the file is deleted successfully, or an error message if not.    
-Update File Metadata  
+Response: A success message if the file is deleted successfully, or an error message if not.  
 
+
+Update File Metadata  
 URL: ``/api/files/{id}``  
 Method: `PUT`
-Body: Updated metadata (e.g., file name)
-Response: The updated file's metadata.  
+Body: Updated metadata (e.g., file name)  
+Response: The updated file's metadata.      
+
 
 ### Step 7: Testing the Application
 To test the application, you can use Postman or any other API testing tool. Ensure that the application is running and the MySQL database is properly configured.  
 
+
 ### Step 8: Build and Run Locally (Without Docker)  
 If you prefer to run the application locally without Docker:  
 
-Build the application using Maven:
+Build the application using Maven:  
 ```mvn clean package```
-Run the application:
+Run the application:  
 ```java -jar target/datavault-application.jar```
-The application will start and be accessible at `http://localhost:8080`.
+The application will start and be accessible at `http://localhost:8080`.  
+
 
 ## Troubleshooting  
 
