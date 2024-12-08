@@ -153,7 +153,9 @@ To test the application, you can use Postman or any other API testing tool. Ensu
 If you prefer to run the application locally without Docker:  
 
 Build the application using Maven:  
-```mvn clean package```
+```mvn clean package```  
+
+
 Run the application:  
 ```java -jar target/datavault-application.jar```
 The application will start and be accessible at `http://localhost:8080`.  
