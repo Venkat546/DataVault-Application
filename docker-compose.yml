@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/file_upload_db
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: mysql@01
+      FILE_UPLOAD_DIR: /app/upload
+    volumes:
+      - ./Vault:/app/upload  # Mount the local upload folder
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql@01
+      MYSQL_DATABASE: file_upload_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: mysql@01
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  mysql-data:
